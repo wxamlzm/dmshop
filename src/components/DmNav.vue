@@ -6,19 +6,39 @@
         left-arrow
         @click-left="onClickLeft"
         @click-right="onClickRight"
-    />
+    >
+      <template #right>
+        <van-icon name="ellipsis" size="20" />
+      </template>
+      
+    </van-nav-bar>
 </template>
 
 <script lang="ts">
+import { defineComponent } from 'vue'
 
-export default({
+export default defineComponent({
   name: 'DmNav',
   props: {
 
   },
+  setup(){
+
+    var onClickLeft = () => {};
+    var onClickRight = () => {};
+
+    return {
+      onClickLeft, onClickRight
+    }
+  }
 });
 </script>
 
 <style lang="scss">
-
+:root{
+  --van-nav-bar-background-color:  #1989fa;
+  --van-nav-bar-text-color: #FFF;
+  --van-nav-bar-title-text-color: #FFF;
+  --van-nav-bar-icon-color:#FFF;
+}
 </style>

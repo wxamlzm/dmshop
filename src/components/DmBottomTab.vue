@@ -8,8 +8,16 @@
 </template>
 
 <script lang="ts">
+import { defineComponent, ref } from 'vue'
 
-export default ({
-    
+export default defineComponent({
+    name: 'DmBottomTab',
+    setup(){
+        var active = ref('');
+
+        return {
+            active
+        }
+    }
 })
 </script>
