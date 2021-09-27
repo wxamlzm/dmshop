@@ -5,7 +5,4 @@ import store from './store'
 import Vant from 'vant';
 import 'vant/lib/index.css';
 
-const app = createApp();
-app.use(Vant);
-
-createApp(App).use(store).use(router).mount('#app');
+createApp(App).use(store).use(router).use(Vant).mount('#app');
