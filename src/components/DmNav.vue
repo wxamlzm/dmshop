@@ -35,10 +35,5 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-:root{
-  --van-nav-bar-background-color:  #1989fa;
-  --van-nav-bar-text-color: #FFF;
-  --van-nav-bar-title-text-color: #FFF;
-  --van-nav-bar-icon-color:#FFF;
-}
+
 </style>
