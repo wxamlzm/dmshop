@@ -11,6 +11,7 @@
                     desc="描述信息"
                     title="商品标题"
                     thumb="https://img.yzcdn.cn/vant/ipad.jpeg"
+                    lazy-load
                     v-for="i in list"
                     :key="i"
                 />
@@ -20,6 +21,7 @@
                     desc="描述信息"
                     title="商品标题"
                     thumb="https://img.yzcdn.cn/vant/ipad.jpeg"
+                    lazy-load
                     v-for="i in list"
                     :key="i"
                 />
