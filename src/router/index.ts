@@ -1,18 +1,31 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Home from '../views/Home.vue'
 import Search from '../views/Search.vue'
+import Cart from '../views/Cart.vue'
+import Me from '../views/Me.vue'
 
 const routes: Array<RouteRecordRaw> = [
+  {
+    path: '/',
+    name: 'Home',
+    component: Home
+  },
   {
     path: '/search',
     name: 'Search',
     component: Search
   },
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: '/me',
+    name: 'Me',
+    component: Me
   },
+  {
+    path: '/cart',
+    name: 'Cart',
+    component: Cart
+  },
+
   // {
   //   path: '/about',
   //   name: 'About',

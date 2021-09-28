@@ -34,7 +34,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from 'vue'
+import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
     name: 'DmList',
@@ -60,10 +60,6 @@ export default defineComponent({
         //     }
         // }, 3000);
         };
-
-        onMounted(()=>{
-            console.log(list.value);
-        });
 
         return {
             list, loading, finished

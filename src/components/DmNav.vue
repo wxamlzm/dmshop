@@ -1,6 +1,6 @@
 <template>
     <van-nav-bar
-        title="首页"
+        :title="title"
         left-text="返回"
         right-text="按钮"
         left-arrow
@@ -16,15 +16,22 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { useRouter } from 'vue-router'
 
 export default defineComponent({
   name: 'DmNav',
   props: {
-
+    title: String,
   },
   setup(){
+    // 初始化路由
+    const router = useRouter();
 
-    var onClickLeft = () => {};
+    var onClickLeft = () => {
+      router.push({
+        path: '/'
+      });
+    };
     var onClickRight = () => {};
 
     return {
