@@ -1,4 +1,5 @@
 <template>
+  <van-config-provider :theme-vars="themeVars">
     <van-nav-bar
         :title="title"
         left-text="返回"
@@ -12,6 +13,7 @@
       </template>
       
     </van-nav-bar>
+  </van-config-provider>
 </template>
 
 <script lang="ts">
@@ -27,6 +29,13 @@ export default defineComponent({
     // 初始化路由
     const router = useRouter();
 
+    const themeVars = {
+      navBarBackgroundColor: '#1989fa',
+      navBarTextColor: '#FFF',
+      navBarTitleTextColor: '#FFF',
+      navBarIconColor:'#FFF',
+    };
+
     var onClickLeft = () => {
       router.push({
         path: '/'
@@ -35,18 +44,17 @@ export default defineComponent({
     var onClickRight = () => {};
 
     return {
-      onClickLeft, onClickRight
+      onClickLeft, onClickRight, themeVars
     }
   }
 });
 </script>
 
 <style lang="scss">
-// 为了防止:root属性被其他属性覆盖，需要在当前最终引用的页面设置，这样在引用时会最后引用
-:root{
-  --van-nav-bar-background-color:  #1989fa !important;
-  --van-nav-bar-text-color: #FFF !important;
-  --van-nav-bar-title-text-color: #FFF !important;
-  --van-nav-bar-icon-color:#FFF !important;
-}
+// :root{
+//   --van-nav-bar-background-color:  #1989fa !important;
+//   --van-nav-bar-text-color: #FFF !important;
+//   --van-nav-bar-title-text-color: #FFF !important;
+//   --van-nav-bar-icon-color:#FFF !important;
+// }
 </style>

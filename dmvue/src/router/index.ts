@@ -3,7 +3,6 @@ import Home from '../views/Home.vue'
 import Search from '../views/Search.vue'
 import Cart from '../views/Cart.vue'
 import Me from '../views/Me.vue'
-import Login from '../views/Login.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -14,7 +13,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/login',
     name: 'Login',
-    component: Login
+    component: () => import(/* webpackChunkName: "Login" */ '../views/Login/Login.vue')
   },
   {
     path: '/search',
