@@ -1,0 +1,69 @@
+<template>
+    <div class="login-waike">
+      <!-- 头部开始 -->
+      <div class="header">
+        <slot name="header"></slot>
+      </div>
+      <!-- 头部结束 -->
+      <div class="dialog">
+        <!-- 标题部分开始 -->
+        <div class="title">
+          <slot name="title"></slot>
+        </div>
+        <!-- 标题部分结束 -->
+        
+        <!-- 正文部分开始 -->
+        <div class="content">
+          <slot name="content"></slot>
+        </div>
+        <!-- 正文部分结束 -->
+
+        <!-- 按钮部分开始 -->
+        <div class="btn">
+          <slot name="btn"></slot>
+        </div>
+        <!-- 按钮部分结束 -->
+
+        <!-- 其他部分开始 -->
+        <div class="other">
+          other
+        </div>
+        <!-- 其他部分结束 -->
+      </div>
+    </div>
+
+</template>
+
+<script>
+import { defineComponent, ref } from 'vue'
+
+export default defineComponent({
+  setup() {
+
+
+    return {
+
+    };
+  },
+})
+</script>
+
+<style lang="scss">
+.login-waike {
+  .dialog {
+    box-sizing: border-box;
+    margin: 0 10%;
+    .title {
+      margin-top: 20px;
+      height: 50px;
+      text-align: center;
+    }
+    .content {
+      margin-top: 30px
+    }
+    .btn {
+      margin-top: 40px
+    }
+  }
+}
+</style>

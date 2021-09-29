@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, onMounted } from 'vue';
 // import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 import DmTabbar from '@/components/DmTabbar.vue'
 import DmNav from '@/components/DmNav.vue'
@@ -24,6 +24,15 @@ export default defineComponent({
     DmGrip,
     DmList
   },
+  setup(){
+
+    onMounted(()=>{
+    })
+
+    return {
+
+    }
+  }
 });
 </script>
 
