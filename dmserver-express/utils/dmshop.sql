@@ -9,3 +9,5 @@ CREATE TABLE IF NOT EXISTS users(
     uname VARCHAR(50) NOT NULL,
     upwd VARCHAR(50) NOT NULL
 ); 
+
+INSERT INTO users VALUES(1, 'wxamlzm', '12345678');

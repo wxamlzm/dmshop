@@ -8,9 +8,9 @@
         <template #input>
             <van-cell-group inset>
                 <!-- 输入任意文本 -->
-                <van-field v-model="text" label="账号" placeholder="请输入账号" />
+                <van-field v-model="uname" label="账号" placeholder="请输入账号" />
                 <!-- 输入密码 -->
-                <van-field v-model="password" type="password" label="密码" placeholder="请输入登录密码" />
+                <van-field v-model="upwd" type="password" label="密码" placeholder="请输入登录密码" />
             </van-cell-group>
         </template>
 
@@ -28,18 +28,27 @@
 </template>
 
 <script>
-import LoginWaike from '@/views/Login/LoginWaike.vue'
+import { defineComponent, ref } from 'vue'
 import axios from 'axios'
 
-export default {
+import LoginWaike from '@/views/Login/LoginWaike.vue'
+
+
+export default defineComponent({
     name: 'Login',
+
     components: {
         LoginWaike
     },
+
     setup(){
+        let uname = ref('');
+        let upwd = ref('');
+
         var goLogin = () => {
-            console.log('触发发送')
-            axios.get('/api/users/login')
+            console.log(uname.value, upwd.value);
+
+            axios.post('/api/users/login', `uname=${uname.value}&upwd=${upwd.value}`)
                  .then(res => {
                      console.log(res);
                      console.log('触发响应');
@@ -47,10 +56,12 @@ export default {
         }
 
         return {
+            uname,
+            upwd,
             goLogin
         }
     }
-}
+})
 </script>
 
 <style lang="scss">
