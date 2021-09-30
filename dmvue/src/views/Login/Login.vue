@@ -39,7 +39,7 @@ export default {
     setup(){
         var goLogin = () => {
             console.log('触发发送')
-            axios.get('/api/login')
+            axios.get('/api/users/login')
                  .then(res => {
                      console.log(res);
                      console.log('触发响应');
