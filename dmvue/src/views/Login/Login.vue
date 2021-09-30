@@ -39,8 +39,11 @@ export default {
     setup(){
         var goLogin = () => {
             console.log('触发发送')
-            axios.get('/api/Login')
-                 .then(res => console.log('触发响应',res));
+            axios.get('/api/login')
+                 .then(res => {
+                     console.log(res);
+                     console.log('触发响应');
+                 });
         }
 
         return {

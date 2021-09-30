@@ -2,11 +2,16 @@
 
 const Controller = require('egg').Controller;
 
-class HomeController extends Controller {
-  async index() {
-    const { ctx } = this;
-    ctx.body = 'hi, egg';
+class UserController extends Controller {
+  // 登录
+  async signin() {
+      const { ctx } = this;
+
+      const result = {
+        msg: '你好'
+      };
+      ctx.body = result;
   }
 }
 
-module.exports = HomeController;
+module.exports = UserController;
