@@ -13,11 +13,23 @@
                 <van-field v-model="password" type="password" label="密码" placeholder="请输入登录密码" />
             </van-cell-group>
         </template>
+
+        <template #btn>
+                <van-button 
+                    type="primary"
+                    block
+                    round
+                    @click = "goLogin"
+                >
+                    立刻登陆
+                </van-button>  
+        </template>
     </login-waike>
 </template>
 
 <script>
 import LoginWaike from '@/views/Login/LoginWaike.vue'
+import axios from 'axios'
 
 export default {
     name: 'Login',
@@ -25,7 +37,15 @@ export default {
         LoginWaike
     },
     setup(){
+        var goLogin = () => {
+            console.log('触发发送')
+            axios.get('/api/Login')
+                 .then(res => console.log('触发响应',res));
+        }
 
+        return {
+            goLogin
+        }
     }
 }
 </script>

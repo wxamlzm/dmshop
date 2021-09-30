@@ -37,13 +37,7 @@
 
             <!-- btn部分开始 -->
             <div class="btn">
-                <van-button 
-                    type="primary"
-                    block
-                    round
-                >
-                    立刻登陆
-                </van-button>                
+                <slot name = "btn"></slot>
             </div>
             <!-- btn部分结束 -->
 
