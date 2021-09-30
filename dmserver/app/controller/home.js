@@ -7,9 +7,7 @@ class UserController extends Controller {
   async signin() {
       const { ctx } = this;
 
-      const result = {
-        msg: '你好'
-      };
+      const result = await ctx.service.user.find();
       ctx.body = result;
   }
 }
